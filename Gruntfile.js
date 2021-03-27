@@ -478,6 +478,19 @@ module.exports = function (grunt)
         grunt.task.run('custom');
     });
 
+    grunt.registerTask('split-nophysics', 'Split Phaser without physics, tilemaps or particles', function ()
+    {
+        grunt.option('exclude', 'arcade,ninja,p2,tilemaps,particles,creature,weapon');
+        grunt.option('filename', 'phaser-split-no-physics');
+        grunt.option('sourcemap', true);
+        grunt.option('copy', true);
+        grunt.option('copycustom', true);
+        grunt.option('uglify', true);
+        grunt.option('split', true);
+
+        grunt.task.run('custom');
+    });
+
     grunt.registerTask('test', 'Phaser Test Build (all libs)', function ()
     {
         grunt.option('exclude', 'ninja,creature');
